@@ -4,7 +4,7 @@ using Reexport
 
 @reexport using SimradRaw
 @reexport using SimradEK60
-@reexport using EchogramPlots
+@reexport using EchogramPyPlot
 @reexport using EchogramImages
 @reexport using EchogramProcessing
 @reexport using EchoviewEvr

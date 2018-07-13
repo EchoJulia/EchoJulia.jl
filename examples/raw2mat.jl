@@ -88,26 +88,42 @@ function main(args)
 
                 if gain != nothing
                     dict["gain$fr"] = gain
+                else
+                    dict["gain$fr"] = [x.gain for x in psf]
                 end
                 if equivalentbeamangle != nothing
                     dict["equivalentbeamangle$fr"]= equivalentbeamangle
+                else
+                    dict["equivalentbeamangle$fr"]= [x.equivalentbeamangle for x in psf]
                 end
                 if soundvelocity != nothing
                     dict["soundvelocity$fr"]= soundvelocity
+                else
+                    dict["soundvelocity$fr"]=  [x.soundvelocity for x in psf]
                 end
                 if absorptioncoefficient != nothing
                     dict["absorptioncoefficient$fr"] = absorptioncoefficient
+                else
+                    dict["absorptioncoefficient$fr"] = [x.absorptioncoefficient for x in psf]
                 end
                 if transmitpower != nothing
                     dict["transmitpower$fr"] = transmitpower
+                else
+                    dict["transmitpower$fr"] = [x.transmitpower for x in psf]
                 end
                 if pulselength != nothing
                     dict["pulselength$fr"] = pulselength
+                else
+                    dict["pulselength$fr"] = [x.pulselength for x in psf]
                 end
                 if sacorrection != nothing
                     dict["sacorrection$fr"] = sacorrection
+                else
+                     dict["sacorrection$fr"] =[x.sacorrection for x in psf]
                 end
 
+                dict["sampleinterval$fr"] =[x.sampleinterval for x in psf]
+                
                 index +=1
             end
 

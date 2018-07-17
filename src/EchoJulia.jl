@@ -6,7 +6,6 @@ using Reexport
 @reexport using SimradEK60
 @reexport using EchogramPyPlot
 @reexport using EchogramImages
-@reexport using EchogramProcessing
 @reexport using EchoviewEvr
 @reexport using EchoviewEcs
 @reexport using SimradEK60TestData

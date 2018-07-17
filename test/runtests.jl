@@ -6,7 +6,11 @@ else
     using Test
 end
 
+Pkg.test("SimradEK60TestData")
 Pkg.test("SimradRaw")
 Pkg.test("SimradEK60")
 Pkg.test("EchoviewEvr")
 Pkg.test("EchoviewEcs")
+Pkg.test("EchogramPyPlot")
+Pkg.test("EchogramImages")
+

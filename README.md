@@ -93,7 +93,7 @@ If you need an echogram image, the following can be useful:
 
 	using Images
 	img = imagesc(Sv38)
-	Images.save("myfile.png",ing)
+	Images.save("myfile.png",img)
 	
 	
 ## Next Steps

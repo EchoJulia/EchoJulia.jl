@@ -41,7 +41,7 @@ a simple echogram:
 	eg(Sv38,cmap=EK500, vmin=-95,vmax=-50,range=depth) # Plot a quick echogram
 	
 
-!{Echogram](doc/media/images/example.png)
+![Echogram](doc/media/images/example.png)
 
 ## Export to MATLAB
 
@@ -81,7 +81,7 @@ Show a histogram of volume backscatter.
 
 	eghist(data["Sv38"]) 
 	
-!{Histogram](doc/media/images/hist.png)
+![Histogram](doc/media/images/hist.png)
 
 ## Image processing
 

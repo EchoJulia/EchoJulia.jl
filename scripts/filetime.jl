@@ -41,20 +41,31 @@ end
 
 function main(args)
 
-    filenames = args
- 
-    for filename in filenames
-        if endswith(uppercase(filename), ".RAW")
-            starttime, endtime = rawstartend(filename)
-            println("$filename\t$starttime\t$endtime\t$(datetime(starttime))\t$(datetime(endtime))")
+    if length(args) == 0
+        x = now()
+        println("$x\t$(Filetimes.filetime(x))")
+    else
+        for arg in args
+            if endswith(uppercase(arg), ".RAW")
+                starttime, endtime = rawstartend(arg)
+                println("$arg\t$starttime\t$endtime\t$(datetime(starttime))\t$(datetime(endtime))")
+                continue
+            end
+            if endswith(uppercase(arg), ".EVR")
+                starttime, endtime = evrstartend(arg)
+                println("$arg\t$starttime\t$endtime\t$(datetime(starttime))\t$(datetime(endtime))")
+                continue
+            end
+
+            y = tryparse(Int64,arg)
+            if isnull(y)
+                println("$arg\t$(Filetimes.filetime(arg))")
+            else
+                println("$(datetime(get(y)))\t$arg")
+            end
         end
-        if endswith(uppercase(filename), ".EVR")
-            starttime, endtime = evrstartend(filename)
-            println("$filename\t$starttime\t$endtime\t$(datetime(starttime))\t$(datetime(endtime))")
-        end
-        
     end
-       
+        
 end
 
 main(ARGS)

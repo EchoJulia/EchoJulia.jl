@@ -36,7 +36,7 @@ function main(args)
 
         try
             info("Processing $filename ...")
-            dict = loadraw(filename, ecs_filename)
+            dict = loadraw(filename, ecs_filename=ecs_filename)
         
             info("Writing $out ...")
             matwrite(out, dict)

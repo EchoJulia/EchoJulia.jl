@@ -12,13 +12,31 @@ export loadraw
 @reexport using EchoviewEcs
 @reexport using SimradEK60TestData
 
-function loadraw(raw_filenames, ecs_filename=nothing)
+
+function between(p, starttime, endtime)
+
+    if starttime == nothing
+        starttime = p.filetime
+    end
+
+    if endtime == nothing
+        endtime = p.filetime
+    end
+
+    starttime <= p.filetime <= endtime
+    
+end
+    
+function loadraw(raw_filenames; ecs_filename=nothing, starttime=nothing, endtime=nothing)
     transducers= []
     if ecs_filename != nothing
         transducers = load(ecs_filename)
     end
     
-    ps = collect(pings(raw_filenames))
+    ps = pings(raw_filenames)
+
+    ps = [p for p in ps if between(p, starttime, endtime)]
+    
     frequencies = unique([p.frequency for p in ps])
             
     dict = Dict()

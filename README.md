@@ -14,7 +14,7 @@ environment in Julia.
 We assume that you have a working Julia system, See
 https://julialang.org/.
 
-## Installation (COMING SOON)
+## Installation
 
 
 	Pkg.add("EchoJulia")
@@ -33,7 +33,7 @@ a simple echogram:
 	filename = EK60_SAMPLE # or some EK60 RAW file name
 	ecs = ECS_SAMPLE # Or some other EchoView Calibration supplement file name
 	
-	data = loadraw(filename, ecs)
+	data = loadraw(filename, ecs_filename=ecs)
 	
 	Sv38 = data["Sv38"] # A matrix of 38 kHz volume backscatter
 	depth = maximum(data["r38"]) # Maximum range in metres

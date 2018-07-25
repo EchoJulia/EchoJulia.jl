@@ -29,17 +29,11 @@ a simple echogram:
 
 
 	using EchoJulia
-	
-	filename = EK60_SAMPLE # or some EK60 RAW file name
-	ecs = ECS_SAMPLE # Or some other EchoView Calibration supplement file name
-	
-	data = loadraw(filename, ecs_filename=ecs)
-	
-	Sv38 = data["Sv38"] # A matrix of 38 kHz volume backscatter
-	depth = maximum(data["r38"]) # Maximum range in metres
-	
-	eg(Sv38,cmap=EK500, vmin=-95,vmax=-50,range=depth) # Plot a quick echogram
-	
+	raw = SimradRaw.load(EK60_SAMPLE)
+	cal = EchoviewEcs.load(ECS_SAMPLE)
+	data = transform(raw, calibration=cal)
+	eg(data["Sv120"], range = maximum(data["r120"]), cmap=EK500, vmin=-95, vmax=-50)
+
 
 ![Echogram](doc/media/images/example.png)
 
@@ -56,7 +50,7 @@ file format is not a proprietary format, but a specialised HDF5 format.
 
 ## Low level API
 
-Although `loadraw` is convenient for exploratory data analysis, we
+Although `load` is convenient for exploratory data analysis, we
 sometimes need access to the underlying EK60 datagrams, for example,
 to access the survey name or NMEA data.
 
@@ -77,8 +71,6 @@ If performance matters, you might choose to access the data ping by ping:
 
 Show a histogram of volume backscatter.
 
-	data = loadraw(EK60_SAMPLE)
-
 	eghist(data["Sv38"]) 
 	
 ![Histogram](doc/media/images/hist.png)
@@ -92,12 +84,14 @@ If you need an echogram image, the following can be useful:
 
 
 	using Images
-	img = imagesc(Sv38)
-	Images.save("myfile.png",img)
+	img = imagesc(data["Sv38"])
+	Images.save("myfile.png", img)
 	
 	
 ## Next Steps
 
-EchoJulia is a work in progress with more functionality coming soon.
+EchoJulia is a work in progress with more functionality coming
+soon. Comments and contributions welcome.
 
-For more information, please contact Rob Blackwell at roback28@bas.ac.uk
+For more information, please contact Rob Blackwell at
+roback28@bas.ac.uk

@@ -1,8 +1,9 @@
+# __precompile__()
 module EchoJulia
 
 using Reexport
 
-export loadraw
+export transform
 
 @reexport using SimradRaw
 @reexport using SimradEK60
@@ -26,14 +27,18 @@ function between(p, starttime, endtime)
     starttime <= p.filetime <= endtime
     
 end
-    
-function loadraw(raw_filenames; ecs_filename=nothing, starttime=nothing, endtime=nothing)
+
+function transform(datagrams::Vector{SimradRaw.Datagram}; calibration=nothing, starttime=nothing, endtime=nothing)
+    ps = collect(pings(datagrams))
+    transform(ps, calibration=calibration, starttime=nothing, endtime=nothing)
+end
+
+function transform(ps::Vector{SimradEK60.EK60Ping}; calibration=nothing, starttime=nothing, endtime=nothing)
+
     transducers= []
-    if ecs_filename != nothing
-        transducers = load(ecs_filename)
+    if calibration != nothing
+        transducers = calibration
     end
-    
-    ps = pings(raw_filenames)
 
     ps = [p for p in ps if between(p, starttime, endtime)]
     
@@ -128,5 +133,7 @@ function loadraw(raw_filenames; ecs_filename=nothing, starttime=nothing, endtime
 
     return dict
 end
+
+
 
 end # module

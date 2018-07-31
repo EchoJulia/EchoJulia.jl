@@ -30,7 +30,7 @@ end
 
 function transform(datagrams::Vector{SimradRaw.Datagram}; calibration=nothing, starttime=nothing, endtime=nothing)
     ps = collect(pings(datagrams))
-    transform(ps, calibration=calibration, starttime=nothing, endtime=nothing)
+    transform(ps, calibration=calibration, starttime=starttime, endtime=endtime)
 end
 
 function transform(ps::Vector{SimradEK60.EK60Ping}; calibration=nothing, starttime=nothing, endtime=nothing)

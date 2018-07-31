@@ -14,10 +14,11 @@ Pkg.test("EchoviewEcs")
 Pkg.test("EchogramPyPlot")
 Pkg.test("EchogramImages")
 
-x = loadraw(EK60_SAMPLE)
+
+x = transform(SimradRaw.load(EK60_SAMPLE))
 
 @test length(x["t38"]) == 572
 
-x = loadraw(EK60_SAMPLE, starttime = 129053535177200000)
+x = transform(SimradRaw.load(EK60_SAMPLE), starttime = 129053535177200000)
 
 @test length(x["t38"]) == 391

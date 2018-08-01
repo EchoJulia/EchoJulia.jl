@@ -27,7 +27,8 @@ function main(args)
     end
 
     for filename in filenames
-        out ="$(basename(filename)).mat"
+
+        out ="$(splitext(basename(filename))[1]).mat"
 
         if isfile(out)
             info("Skipping $out.")
@@ -36,7 +37,14 @@ function main(args)
 
         try
             info("Processing $filename ...")
-            dict = loadraw(filename, ecs_filename=ecs_filename)
+            raw = SimradRaw.load(filename)
+            if ecs_filename == nothing
+                cal = nothing
+            else
+                cal = EchoviewEcs.load(ecs_filename)
+            end
+            
+            dict = transform(raw, calibration=cal)
         
             info("Writing $out ...")
             matwrite(out, dict)

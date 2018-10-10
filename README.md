@@ -11,18 +11,33 @@ Meta package that loads all the EchoJulia related packages for a
 "batteries included" hydroacoustic data processing and analysis
 environment in Julia.
 
-We assume that you have a working Julia system, See
+We assume that you have a working Julia 1.0 system, See
 https://julialang.org/.
 
-N.B. The Julia world is in transition as everything moves to version
-1.0 - Package versions are lagging and you may need github versions
-for things to work.
 
 ## Installation
 
+Clone the repository
 
-	Pkg.add("EchoJulia")
+	git clone https://github.com/EchoJulia/EchoJulia.jl.git
 
+Change into the EchoJulia.jl directory
+
+	cd EchoJulia.jl
+
+Start julia
+
+	julia
+
+Switch to package mode by pressing `]` and activate, update and precompile:
+
+	activate .
+	update
+	precompile
+
+Quit package mode by pressing `backspace`.
+
+You should now be ready to go.
 
 ## Simple Example
 
@@ -37,7 +52,7 @@ a simple echogram:
 	cal = EchoviewEcs.load(ECS_SAMPLE)
 	data = transform(raw, calibration=cal)
 	echogram(data["Sv38"], range = maximum(data["r38"]), vmin=-95, vmax=-50)
-	
+
 
 ![Echogram](doc/media/images/example.png)
 
@@ -48,7 +63,7 @@ a simple echogram:
 
 
 <!-- 	Pkg.add("MAT") -->
-	
+
 <!-- 	using MAT -->
 <!-- 	matwrite("myfile.mat", data) -->
 
@@ -76,7 +91,7 @@ If performance matters, you might choose to access the data ping by ping:
 <!-- Show a histogram of volume backscatter. -->
 
 <!-- 	eghist(data["Sv38"])  -->
-	
+
 <!-- ![Histogram](doc/media/images/hist.png) -->
 
 ## Image processing
@@ -90,8 +105,8 @@ If you need an echogram image, the following can be useful:
 	using Images
 	img = imagesc(data["Sv38"])
 	Images.save("myfile.png", img)
-	
-	
+
+
 ## Next Steps
 
 EchoJulia is a work in progress with more functionality coming

@@ -244,10 +244,12 @@ uuid = "02fcd773-0e25-5acc-982a-7f6622650795"
 version = "0.6.0"
 
 [[Images]]
-deps = ["AxisArrays", "Base64", "ColorTypes", "ColorVectorSpace", "Colors", "FileIO", "FixedPointNumbers", "Graphics", "ImageAxes", "ImageCore", "ImageDistances", "ImageFiltering", "ImageMetadata", "ImageMorphology", "ImageShow", "ImageTransformations", "IndirectArrays", "InteractiveUtils", "LinearAlgebra", "MappedArrays", "OffsetArrays", "Pkg", "Random", "Reexport", "SIUnits", "SparseArrays", "StaticArrays", "Statistics", "StatsBase", "Test", "TiledIteration"]
-git-tree-sha1 = "73e21f66a8968d52ccf93b9c9c6a46e652d33d4e"
+deps = ["AxisArrays", "Base64", "ColorTypes", "ColorVectorSpace", "Colors", "FileIO", "FixedPointNumbers", "Graphics", "ImageAxes", "ImageCore", "ImageDistances", "ImageFiltering", "ImageMetadata", "ImageMorphology", "ImageShow", "ImageTransformations", "IndirectArrays", "LinearAlgebra", "MappedArrays", "OffsetArrays", "Random", "Reexport", "SIUnits", "SparseArrays", "StaticArrays", "Statistics", "StatsBase", "Test", "TiledIteration"]
+git-tree-sha1 = "28dd1428806ec7997e37ce0a0e195615c473677e"
+repo-rev = "master"
+repo-url = "https://github.com/JuliaImages/Images.jl.git"
 uuid = "916415d5-f1e6-5110-898d-aaa5f9f070e0"
-version = "0.16.0"
+version = "0.16.0+"
 
 [[IndirectArrays]]
 deps = ["Compat", "Pkg", "Test"]
@@ -461,6 +463,14 @@ git-tree-sha1 = "f20c0feaa4f47720be441d894c2fa4d970823d6c"
 repo-rev = "master"
 repo-url = "https://github.com/EchoJulia/SimradEK60.jl.git"
 uuid = "8e323af8-d215-5c39-b262-30cfc2fa9c48"
+version = "0.1.0+"
+
+[[SimradEK60TestData]]
+deps = ["Test"]
+git-tree-sha1 = "e80f1b5d7cf4a806c4d787caf7c0f997dc88b578"
+repo-rev = "master"
+repo-url = "https://github.com/EchoJulia/SimradEK60TestData.jl.git"
+uuid = "6560e86b-c63b-5eb7-baae-f1872a4305ea"
 version = "0.1.0+"
 
 [[SimradRaw]]

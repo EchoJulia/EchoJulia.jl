@@ -7,7 +7,8 @@ export transform
 
 @reexport using SimradRaw
 @reexport using SimradEK60
-@reexport using EchogramPyPlot
+#@reexport using EchogramPyPlot
+@reexport using EchogramPlots
 @reexport using EchogramImages
 @reexport using EchoviewEvr
 @reexport using EchoviewEcs
@@ -25,7 +26,7 @@ function between(p, starttime, endtime)
     end
 
     starttime <= p.filetime <= endtime
-    
+
 end
 
 function transform(datagrams::Vector{SimradRaw.Datagram}; calibration=nothing, starttime=nothing, endtime=nothing)
@@ -41,9 +42,9 @@ function transform(ps::Vector{SimradEK60.EK60Ping}; calibration=nothing, startti
     end
 
     ps = [p for p in ps if between(p, starttime, endtime)]
-    
+
     frequencies = unique([p.frequency for p in ps])
-            
+
     dict = Dict()
 
     index = 1
@@ -125,7 +126,7 @@ function transform(ps::Vector{SimradEK60.EK60Ping}; calibration=nothing, startti
         end
 
         dict["sampleinterval$fr"] =[x.sampleinterval for x in psf]
-        
+
         index +=1
     end
 

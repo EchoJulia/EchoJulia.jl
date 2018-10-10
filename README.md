@@ -14,6 +14,10 @@ environment in Julia.
 We assume that you have a working Julia system, See
 https://julialang.org/.
 
+N.B. The Julia world is in transition as everything moves to version
+1.0 - Package versions are lagging and you may need github versions
+for things to work.
+
 ## Installation
 
 
@@ -32,21 +36,21 @@ a simple echogram:
 	raw = SimradRaw.load(EK60_SAMPLE)
 	cal = EchoviewEcs.load(ECS_SAMPLE)
 	data = transform(raw, calibration=cal)
-	eg(data["Sv120"], range = maximum(data["r120"]), cmap=EK500, vmin=-95, vmax=-50)
-
+	echogram(data["Sv38"], range = maximum(data["r38"]), vmin=-95, vmax=-50)
+	
 
 ![Echogram](doc/media/images/example.png)
 
-## Export to MATLAB
+<!-- ## Export to MATLAB -->
 
-It is often desirable to export the data for further analysis. Note that the MATLAB MAT
-file format is not a proprietary format, but a specialised HDF5 format.
+<!-- It is often desirable to export the data for further analysis. Note that the MATLAB MAT -->
+<!-- file format is not a proprietary format, but a specialised HDF5 format. -->
 
 
-	Pkg.add("MAT")
+<!-- 	Pkg.add("MAT") -->
 	
-	using MAT
-	matwrite("myfile.mat", data)
+<!-- 	using MAT -->
+<!-- 	matwrite("myfile.mat", data) -->
 
 ## Low level API
 
@@ -67,13 +71,13 @@ If performance matters, you might choose to access the data ping by ping:
 	ps38 = [p for p in ps if p.frequency == 38000] # Just 38 kHz pings
 	Sv38 = Sv(ps38) # Convert to a matrix of volume backscatter
 
-## Histograms
+<!-- ## Histograms -->
 
-Show a histogram of volume backscatter.
+<!-- Show a histogram of volume backscatter. -->
 
-	eghist(data["Sv38"]) 
+<!-- 	eghist(data["Sv38"])  -->
 	
-![Histogram](doc/media/images/hist.png)
+<!-- ![Histogram](doc/media/images/hist.png) -->
 
 ## Image processing
 

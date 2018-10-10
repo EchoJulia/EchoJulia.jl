@@ -1,8 +1,8 @@
-julia 0.6
+julia 0.7
 Reexport
 SimradRaw
 SimradEK60
-EchogramPyPlot
+EchogramPlots
 EchogramImages
 EchoviewEvr
 EchoviewEcs

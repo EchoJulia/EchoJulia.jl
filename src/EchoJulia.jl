@@ -7,8 +7,8 @@ export transform
 
 @reexport using SimradRaw
 @reexport using SimradEK60
-#@reexport using EchogramPyPlot
-@reexport using EchogramPlots
+@reexport using EchogramPyPlot
+#@reexport using EchogramPlots
 @reexport using EchogramImages
 @reexport using EchoviewEvr
 @reexport using EchoviewEcs

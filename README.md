@@ -14,8 +14,13 @@ environment in Julia.
 We assume that you have a working Julia 1.0 system, See
 https://julialang.org/.
 
+## Simple Installation
 
-## Installation
+Switch to package mode by pressing `]`
+
+	add EchoJulia
+
+## Installation for developers
 
 Clone the repository
 
@@ -86,13 +91,13 @@ If performance matters, you might choose to access the data ping by ping:
 	ps38 = [p for p in ps if p.frequency == 38000] # Just 38 kHz pings
 	Sv38 = Sv(ps38) # Convert to a matrix of volume backscatter
 
-<!-- ## Histograms -->
+## Histograms
 
-<!-- Show a histogram of volume backscatter. -->
+Show a histogram of volume backscatter.
 
-<!-- 	eghist(data["Sv38"])  -->
+	eghist(data["Sv38"])
 
-<!-- ![Histogram](doc/media/images/hist.png) -->
+![Histogram](doc/media/images/hist.png)
 
 ## Image processing
 
@@ -106,6 +111,26 @@ If you need an echogram image, the following can be useful:
 	img = imagesc(data["Sv38"])
 	Images.save("myfile.png", img)
 
+
+## Dependencies
+
+```
+EchoJulia
+	EchogramImages
+	EchogramPlots
+	EchoviewEcs
+	EchoviewEvr
+		Filetimes
+	SimradEK60
+		SimradRaw
+	SimradEK60TestData
+
+AliasedSeabed
+	EchogramUtils
+	EchogramProcessing
+
+EchogramPyPlot
+```
 
 ## Next Steps
 

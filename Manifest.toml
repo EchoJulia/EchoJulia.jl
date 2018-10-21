@@ -27,9 +27,9 @@ version = "0.8.10"
 
 [[BinaryProvider]]
 deps = ["Libdl", "Pkg", "SHA", "Test"]
-git-tree-sha1 = "38be61810f280c3c478f5c38aaf387f8f9199275"
+git-tree-sha1 = "9930c1a6cd49d9fcd7218df6be417e6ae4f1468a"
 uuid = "b99e7846-7c00-51b0-8f62-c81ae34c0232"
-version = "0.5.1"
+version = "0.5.2"
 
 [[CatIndices]]
 deps = ["CustomUnitRanges", "OffsetArrays", "Test"]
@@ -57,9 +57,9 @@ version = "0.9.4"
 
 [[Compat]]
 deps = ["Base64", "Dates", "DelimitedFiles", "Distributed", "InteractiveUtils", "LibGit2", "Libdl", "LinearAlgebra", "Markdown", "Mmap", "Pkg", "Printf", "REPL", "Random", "Serialization", "SharedArrays", "Sockets", "SparseArrays", "Statistics", "Test", "UUIDs", "Unicode"]
-git-tree-sha1 = "ff2595695fc4f14427358ce2593f867085c45dcb"
+git-tree-sha1 = "2d9e14d19bad3f9ad5cc5e4cffabc3cfa59de825"
 uuid = "34da2185-b29b-5c13-b0c7-acf172513d20"
-version = "1.2.0"
+version = "1.3.0"
 
 [[ComputationalResources]]
 deps = ["Pkg", "Test"]
@@ -69,9 +69,9 @@ version = "0.3.0"
 
 [[Conda]]
 deps = ["Compat", "JSON", "VersionParsing"]
-git-tree-sha1 = "85b5bf3ffcf4f39abe019dab1dd00a0aead8d882"
+git-tree-sha1 = "fb86fe40cb5b35990e368709bfdc1b46dbb99dac"
 uuid = "8f4d0f93-b110-5947-807f-2305c1781a2d"
-version = "1.0.2"
+version = "1.1.1"
 
 [[Contour]]
 deps = ["LinearAlgebra", "StaticArrays", "Test"]
@@ -123,13 +123,13 @@ repo-url = "https://github.com/EchoJulia/EchogramImages.jl.git"
 uuid = "ef02786f-6848-5d1f-95d1-5517628ee114"
 version = "0.0.1+"
 
-[[EchogramPlots]]
-deps = ["Measures", "Plots", "Test"]
-git-tree-sha1 = "47efba2a5e6bb9bb2cc46f5bff7363fda388bfa4"
+[[EchogramPyPlot]]
+deps = ["ColorTypes", "PyPlot"]
+git-tree-sha1 = "4aa0921e479efaff6d2253e6327354ef1bed0c82"
 repo-rev = "master"
-repo-url = "https://github.com/EchoJulia/EchogramPlots.jl.git"
-uuid = "7c1b10e2-f943-5ee8-9485-fb17fcc1b9c5"
-version = "0.0.0"
+repo-url = "https://github.com/EchoJulia/EchogramPyPlot.jl.git"
+uuid = "cefffc6e-22df-5efe-a096-e879be851ea5"
+version = "0.0.1+"
 
 [[EchoviewEcs]]
 deps = ["Test"]
@@ -249,7 +249,7 @@ git-tree-sha1 = "28dd1428806ec7997e37ce0a0e195615c473677e"
 repo-rev = "master"
 repo-url = "https://github.com/JuliaImages/Images.jl.git"
 uuid = "916415d5-f1e6-5110-898d-aaa5f9f070e0"
-version = "0.16.0+"
+version = "0.16.1+"
 
 [[IndirectArrays]]
 deps = ["Compat", "Pkg", "Test"]
@@ -263,9 +263,9 @@ uuid = "b77e0a4c-d291-57a0-90e8-8db25a27a240"
 
 [[Interpolations]]
 deps = ["AxisAlgorithms", "LinearAlgebra", "OffsetArrays", "Random", "Ratios", "SharedArrays", "SparseArrays", "StaticArrays", "Test", "WoodburyMatrices"]
-git-tree-sha1 = "d3328be2a9624d62957607a8bdfcc164d24f1b6d"
+git-tree-sha1 = "56691033f157dd1ee1d2aa042114caeefefa897b"
 uuid = "a98d9a8b-a2ab-59e6-89dd-64a1c18fca59"
-version = "0.10.3"
+version = "0.10.5"
 
 [[IntervalSets]]
 deps = ["Compat"]
@@ -275,15 +275,21 @@ version = "0.3.0"
 
 [[IterTools]]
 deps = ["Pkg", "SparseArrays", "Test"]
-git-tree-sha1 = "3eb252416e1a5215530420cdd22b46208bb9d4c7"
+git-tree-sha1 = "79246285c43602384e6f1943b3554042a3712056"
 uuid = "c8e1da08-722c-5040-9ed9-7db0dc04731e"
-version = "1.1.0"
+version = "1.1.1"
 
 [[JSON]]
 deps = ["Dates", "Distributed", "Mmap", "Pkg", "Sockets", "Test", "Unicode"]
 git-tree-sha1 = "fec8e4d433072731466d37ed0061b3ba7f70eeb9"
 uuid = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
 version = "0.19.0"
+
+[[LaTeXStrings]]
+deps = ["Compat"]
+git-tree-sha1 = "7ab9b8788cfab2bdde22adf9004bda7ad9954b6c"
+uuid = "b964fa9f-0449-5b57-a5c2-d3ea65f4040f"
+version = "1.0.3"
 
 [[LibGit2]]
 uuid = "76f85450-5226-5b5a-8eaa-529ad045b433"
@@ -365,9 +371,9 @@ version = "0.3.0"
 
 [[PlotUtils]]
 deps = ["Colors", "Dates", "Printf", "Random", "Reexport", "Test"]
-git-tree-sha1 = "78553a920c4869d20742ba66193e3692369086ec"
+git-tree-sha1 = "fd28f30a294a38ec847de95d8ac7ac916ccd7c06"
 uuid = "995b91a9-d308-5afd-9ec6-746e21dbc043"
-version = "0.5.4"
+version = "0.5.5"
 
 [[Plots]]
 deps = ["Base64", "Contour", "Dates", "FixedPointNumbers", "GR", "JSON", "LinearAlgebra", "Measures", "NaNMath", "Pkg", "PlotThemes", "PlotUtils", "Printf", "Random", "RecipesBase", "Reexport", "Requires", "Showoff", "SparseArrays", "StaticArrays", "Statistics", "StatsBase", "Test", "UUIDs"]
@@ -384,6 +390,18 @@ deps = ["Distributed", "Printf", "Random", "Test"]
 git-tree-sha1 = "5b55c2c974084eab2689ec0d1d5245561b22aeb0"
 uuid = "92933f4c-e287-5a05-a399-4b506db050ca"
 version = "0.6.1"
+
+[[PyCall]]
+deps = ["Compat", "Conda", "MacroTools", "Statistics", "VersionParsing"]
+git-tree-sha1 = "ce4681263f41d98b3faf6107b28284bf8b866f5f"
+uuid = "438e738f-606a-5dbb-bf0a-cddfbfd45ab0"
+version = "1.18.5"
+
+[[PyPlot]]
+deps = ["Colors", "Compat", "LaTeXStrings", "PyCall", "VersionParsing"]
+git-tree-sha1 = "777c48006c57c8bd322d2032267085983a5fd50f"
+uuid = "d330b81b-6aea-500a-939a-2ce795aea3ee"
+version = "2.6.3"
 
 [[REPL]]
 deps = ["InteractiveUtils", "Markdown", "Sockets"]

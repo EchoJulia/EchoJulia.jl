@@ -56,21 +56,24 @@ a simple echogram:
 	raw = SimradRaw.load(EK60_SAMPLE)
 	cal = EchoviewEcs.load(ECS_SAMPLE)
 	data = transform(raw, calibration=cal)
-	echogram(data["Sv38"], range = maximum(data["r38"]), vmin=-95, vmax=-50)
+	echogram(data["Sv38"], range = maximum(data["r38"]), vmin=-95, vmax=-50, cmap=EK500)
 
 
 ![Echogram](doc/media/images/example.png)
 
-<!-- ## Export to MATLAB -->
+## Export to MATLAB
 
-<!-- It is often desirable to export the data for further analysis. Note that the MATLAB MAT -->
-<!-- file format is not a proprietary format, but a specialised HDF5 format. -->
+It is often desirable to export the data for further analysis. Note that the MATLAB MAT
+file format is not a proprietary format, but a specialised HDF5 format.
 
 
-<!-- 	Pkg.add("MAT") -->
+	Pkg.add("MAT")
 
-<!-- 	using MAT -->
-<!-- 	matwrite("myfile.mat", data) -->
+	using MAT
+	matwrite("myfile.mat", data)
+	
+NB This seems to be problematic in Julia 1.0 and we are waiting for
+MAT to be updated.
 
 ## Low level API
 
